@@ -1,0 +1,46 @@
+.skills-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 32px 0;
+}
+.skills-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.skills-intro {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 1.1rem;
+    color: #444;
+}
+.skills-group {
+    margin-bottom: 32px;
+}
+.skills-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+}
+@media (max-width: 600px) {
+    .skills-items {
+        gap: 16px;
+    }
+    .skill-item {
+        width: 80px;
+    }
+    .skill-icon {
+        width: 36px;
+        height: 36px;
+    }
+}

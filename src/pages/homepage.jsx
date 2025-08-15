@@ -4,9 +4,8 @@ import { Helmet } from "react-helmet";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faTwitter,
 	faGithub,
-	faStackOverflow,
+	
 	faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -14,7 +13,6 @@ import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
 
-import Works from "../components/homepage/works";
 import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
@@ -25,36 +23,35 @@ import "./styles/homepage.css";
 
 const Homepage = () => {
 	const [stayLogo, setStayLogo] = useState(false);
-	const [logoSize, setLogoSize] = useState(80);
-	const [oldLogoSize, setOldLogoSize] = useState(80);
+	const MAX_LOGO_SIZE = 150; // set your desired max size
+const MIN_LOGO_SIZE = 40;
 
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+const [logoSize, setLogoSize] = useState(MAX_LOGO_SIZE);
+const [oldLogoSize, setOldLogoSize] = useState(MAX_LOGO_SIZE);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			let scroll = Math.round(window.pageYOffset, 2);
+useEffect(() => {
+    const handleScroll = () => {
+        let scroll = Math.round(window.pageYOffset, 2);
+        let newLogoSize = MAX_LOGO_SIZE - (scroll * 4) / 10;
 
-			let newLogoSize = 80 - (scroll * 4) / 10;
+        if (newLogoSize < oldLogoSize) {
+            if (newLogoSize > MIN_LOGO_SIZE) {
+                setLogoSize(newLogoSize);
+                setOldLogoSize(newLogoSize);
+                setStayLogo(false);
+            } else {
+                setStayLogo(true);
+            }
+        } else {
+            setLogoSize(newLogoSize);
+            setStayLogo(false);
+        }
+    };
 
-			if (newLogoSize < oldLogoSize) {
-				if (newLogoSize > 40) {
-					setLogoSize(newLogoSize);
-					setOldLogoSize(newLogoSize);
-					setStayLogo(false);
-				} else {
-					setStayLogo(true);
-				}
-			} else {
-				setLogoSize(newLogoSize);
-				setStayLogo(false);
-			}
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
+    	window.addEventListener("scroll", handleScroll);
+    	return () => window.removeEventListener("scroll", handleScroll);
 	}, [logoSize, oldLogoSize]);
+
 
 	const currentSEO = SEO.find((item) => item.page === "home");
 
@@ -115,16 +112,6 @@ const Homepage = () => {
 
 						<div className="homepage-socials">
 							<a
-								href={INFO.socials.twitter}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faTwitter}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
 								href={INFO.socials.github}
 								target="_blank"
 								rel="noreferrer"
@@ -134,16 +121,7 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
-							<a
-								href={INFO.socials.stackoverflow}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faStackOverflow}
-									className="homepage-social-icon"
-								/>
-							</a>
+						
 							<a
 								href={INFO.socials.instagram}
 								target="_blank"
@@ -170,11 +148,6 @@ const Homepage = () => {
 							<AllProjects />
 						</div>
 
-						<div className="homepage-after-title">
-							<div className="homepage-works">
-								<Works />
-							</div>
-						</div>
 
 						<div className="page-footer">
 							<Footer />
