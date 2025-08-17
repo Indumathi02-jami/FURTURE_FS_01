@@ -36,3 +36,117 @@
 	justify-content: flex-start;
 	align-items: center;
 }
+/* contact.css */
+
+/* Existing container styles */
+.contact-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+  text-align: center;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007bff;
+  background: #fff;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #0056b3;
+}
+
+/* Social icons container */
+.socials-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+/* Fix for social links */
+/* Social links container */
+.contact-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between each social item */
+  margin-top: 20px;
+}
+
+/* Each social link */
+.contact-socials a {
+  display: flex;
+  align-items: center;   /* ✅ ensures icon & text are vertically aligned */
+  gap: 10px;             /* space between icon and text */
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-socials a:hover {
+  color: #007bff;
+}
+
+/* Icon styling */
+.contact-socials svg {
+  font-size: 1.4rem; /* make icons slightly larger */
+}

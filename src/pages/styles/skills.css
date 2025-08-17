@@ -1,46 +1,100 @@
 .skills-section {
-    max-width: 800px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 32px 0;
 }
+
 .skills-header {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+    font-size: 2.2rem;
+    color: #1976d2;
+    letter-spacing: 1px;
 }
+
 .skills-intro {
     text-align: center;
     margin-bottom: 32px;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #444;
 }
-.skills-group {
-    margin-bottom: 32px;
-}
-.skills-items {
+
+.skills-cards-container {
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
+    justify-content: center;
 }
-.skill-item {
+
+.skills-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+    padding: 24px 32px;
+    min-width: 260px;
+    max-width: 320px;
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100px;
+    transition: box-shadow 0.2s;
 }
-.skill-icon {
+
+.skills-card:hover {
+    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.18);
+}
+
+.skills-card-title {
+    margin-bottom: 18px;
+    font-size: 1.25rem;
+    color: #1976d2;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.skills-icons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.skills-icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+
+.skills-icon-img {
     width: 48px;
     height: 48px;
     margin-bottom: 8px;
+    border-radius: 12px;
+    background: #f5f7fa;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.06);
+    transition: transform 0.2s;
 }
-@media (max-width: 600px) {
-    .skills-items {
-        gap: 16px;
+
+.skills-icon-img:hover {
+    transform: scale(1.12) rotate(-6deg);
+}
+
+.skills-icon-label {
+    font-size: 0.98rem;
+    color: #333;
+    margin-top: 2px;
+}
+
+@media (max-width: 700px) {
+    .skills-cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
-    .skill-item {
-        width: 80px;
-    }
-    .skill-icon {
-        width: 36px;
-        height: 36px;
+    .skills-card {
+        width: 90%;
+        min-width: unset;
+        max-width: unset;
     }
 }

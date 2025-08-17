@@ -66,7 +66,7 @@ const INFO = {
             title: "PortFolio",
             description:
                 "A personal portfolio website built using React.js to showcase my projects, skills, and experience. The site features a modern, responsive design and easy navigation, allowing visitors to explore my work and connect with me. This project highlights my frontend development skills and attention to user experience.",
-            logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+            logo: process.env.PUBLIC_URL + "/OIP.jpeg",
             linkText: "View Project",
             link: "https://github.com/Indumathi02-jami/FURTURE_FS_01",
         },
@@ -78,16 +78,24 @@ const INFO = {
             {
                 title: "Frontend",
                 items: [
-                    { title: "React", icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/react/react.png" },
+                    { title: "React", icon: process.env.PUBLIC_URL + "/OIP.jpeg" },
                     { title: "JavaScript", icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png" },
                 ],
             },
             {
                 title: "Backend",
                 items: [
-                    { title: "Node.js", icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/nodejs/nodejs.png" },
+                    { title: "Node.js", icon: process.env.PUBLIC_URL + "/nodejs.png" },
+                    { title: "SQL", icon: process.env.PUBLIC_URL + "/542135.jpg" },
                 ],
             },
+            {
+                title: "Tools",
+                items: [
+                    { title: "Git", icon: process.env.PUBLIC_URL + "/git.png" },
+                    { title: "Figma", icon: process.env.PUBLIC_URL + "/figma.png" },
+                ],
+            }
         ],
     },
 };
