@@ -36,25 +36,21 @@ The contact form uses [EmailJS](https://www.emailjs.com/) to send emails without
 App.js
 index.js
 
-1. Clone the repository:
+step-1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/react-portfolio.git
    cd react-portfolio
-Install dependencies:
-
-bash
-Copy code
+step-2: Install dependencies:
 npm install
 
-Create a .env file for your EmailJS credentials (optional, if you want to keep them secret):
+step--3: Create a .env file for your EmailJS credentials (optional, if you want to keep them secret):
 Copy code
 REACT_APP_EMAILJS_SERVICE_ID=your_service_id
 REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
 REACT_APP_EMAILJS_USER_ID=your_user_id
-Start the development server:
 
-bash
-Copy code
+
+step-4:Start the development server:
 npm start
 
 📤 Deploy
